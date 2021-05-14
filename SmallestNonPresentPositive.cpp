@@ -3,7 +3,11 @@
 using namespace std;
 #include <iostream>
 
-int solution(vector<int>& A) {
+/*
+This is
+*/
+
+int SmallestNonPresentPositive(vector<int>& A) {
     int positive_iterator = 1;
     int least = 1;
     int last = 1;
@@ -29,14 +33,16 @@ int solution(vector<int>& A) {
 int main()
 {
     vector<int> A;
-    int size = 6;
+    int size = 0;
+    cout << "Enter the number of elements to be input : ";
+    cin >> size;
     int x = 0;
-    for (size_t i = 0; i < 6; i++)
+    for (int i = 0; i < size; i++)
     {
         cin >> x;
         A.push_back(x);
     }
-    x =solution(A);
+    x = SmallestNonPresentPositive(A);
     cout << x;
     return 0;
 }
