@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+int FindUniquePaths(int m, int  n)
+{
+	if (n == 1 || m == 1)
+		return 1;
+	else
+		return FindUniquePaths(n - 1, m) + FindUniquePaths(m - 1, n);
+}
+
+int main()
+{
+	int m, n;
+	std::cin >> m >> n;
+	int x = FindUniquePaths(m, n);
+	std::cout << "Paths = " << x << std::endl;
+	return 0;
+}
