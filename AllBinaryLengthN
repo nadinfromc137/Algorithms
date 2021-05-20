@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+void printmyarr(int* arr, int n)
+{
+	for (size_t i = 0; i < n; i++)
+	{
+		std::cout << arr[i];
+	}
+	std::cout << std::endl;
+}
+void BinaryTillN(int n, int* arr, int i, int x)
+{
+	if (i == n)
+	{
+		printmyarr(arr, n);
+		//std::cout << "At function call = " << x << std::endl;
+		return;
+	}
+	arr[i] = 0;
+	//std::cout << "Right now x= " << x << std::endl;
+
+	BinaryTillN(n, arr, i + 1, x++);
+	arr[i] = 1;
+	BinaryTillN(n, arr, i + 1, x++);
+}
+
+
+int main()
+{
+	int n; std::cin >> n;
+	int *arr = new int [n];
+	int x = 1;
+	BinaryTillN(n, arr, 0, x);
+	return 0;
+}
